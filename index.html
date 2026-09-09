@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطاعم ومنتجع قاسيون | الملف الاستراتيجي للتجربة الرقمية والهوية البصرية</title>
+  
+  <!-- Modern Fonts: Cinzel, Plus Jakarta Sans, Amiri, and IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-bg: #0b131a;
+      --color-surface: #101c27;
+      --color-surface-elevated: #162534;
+      --color-surface-glass: rgba(16, 28, 39, 0.75);
+      --color-primary-navy: #1b354b;
+      --color-deep-indigo: #0d1721;
+      --color-gold: #c5a059;
+      --color-gold-light: #e0be7a;
+      --color-gold-dark: #977735;
+      --color-terracotta: #c4683c;
+      --color-emerald: #2e4a3e;
+      --color-bougainvillea: #b83253;
+      --color-alabaster: #f8f6f0;
+      --color-text: #e6edf3;
+      --color-text-muted: #95a7b7;
+      --color-border: rgba(197, 160, 89, 0.22);
+      --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+      --font-arabic-serif: 'Amiri', serif;
+      --font-arabic-sans: 'IBM Plex Sans Arabic', sans-serif;
+      --font-latin-display: 'Cinzel', serif;
+      --font-latin-sans: 'Plus Jakarta Sans', sans-serif;
+
+      --shadow-lux: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(197, 160, 89, 0.08);
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-arabic-sans);
+      line-height: 1.75;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(27, 53, 75, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(197, 160, 89, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(13, 23, 33, 0.6) 0%, transparent 100%);
+      background-attachment: fixed;
+    }
+
+    /* Selection & Scrollbar */
+    ::selection {
+      background: var(--color-gold);
+      color: var(--color-deep-indigo);
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-primary-navy);
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+
+    /* Layout Containers */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header & Navigation */
+    header.agency-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: var(--color-surface-glass);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.85rem 0;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-id {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo-frame {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-gold);
+      box-shadow: 0 0 15px rgba(197, 160, 89, 0.25);
+      overflow: hidden;
+    }
+
+    .brand-logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-titles h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-titles span {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-latin-sans);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .agency-tag {
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid var(--color-border);
+      color: var(--color-gold-light);
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .agency-tag::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* Hero Presentation Banner */
+    .hero-banner {
+      position: relative;
+      padding: 6rem 0 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--color-border-subtle);
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(197, 160, 89, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-pretitle {
+      font-family: var(--font-latin-display);
+      color: var(--color-gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-pretitle::before, .hero-pretitle::after {
+      content: '✦';
+      color: var(--color-gold);
+      font-size: 0.8rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-arabic-serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #fff 20%, var(--color-gold-light) 60%, var(--color-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 820px;
+      margin: 0 auto 2.5rem;
+      color: var(--color-text-muted);
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .hero-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-gold);
+      box-shadow: var(--shadow-lux);
+    }
+
+    .stat-num {
+      font-family: var(--font-latin-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--color-text);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .stat-desc {
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+      text-align: right;
+    }
+
+    .section-badge {
+      display: inline-block;
+      color: var(--color-gold);
+      font-family: var(--font-latin-display);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-right: 1.5rem;
+    }
+
+    .section-badge::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 2px;
+      background: var(--color-gold);
+    }
+
+    .section-title {
+      font-family: var(--font-arabic-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      max-width: 850px;
+      line-height: 1.8;
+    }
+
+    /* Cards & Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .glass-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(197, 160, 89, 0.45);
+      box-shadow: var(--shadow-lux);
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-gold);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-family: var(--font-arabic-serif);
+    }
+
+    .card-body {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    /* Logo Analysis Spotlight */
+    .logo-spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: center;
+      background: linear-gradient(145deg, #101c27 0%, #0c151e 100%);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-lux);
+    }
+
+    .logo-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-gold);
+      box-shadow: 0 0 35px rgba(197, 160, 89, 0.25);
+    }
+
+    .logo-visual img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    }
+
+    .logo-visual-caption {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--color-deep-indigo);
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-details h3 {
+      font-family: var(--font-arabic-serif);
+      font-size: 1.8rem;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+    }
+
+    .logo-details p {
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: var(--color-text);
+      font-size: 0.95rem;
+    }
+
+    .feature-list li strong {
+      color: var(--color-gold-light);
+    }
+
+    .feature-list li::before {
+      content: '◆';
+      color: var(--color-gold);
+      font-size: 0.75rem;
+      margin-top: 0.35rem;
+    }
+
+    /* Color Palette Section */
+    .color-swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .swatch-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .swatch-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lux);
+      border-color: var(--color-gold);
+    }
+
+    .swatch-preview {
+      height: 110px;
+      width: 100%;
+      position: relative;
+    }
+
+    .swatch-info {
+      padding: 1.25rem;
+    }
+
+    .swatch-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-latin-sans);
+      font-size: 0.8rem;
+      color: var(--color-gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .swatch-desc {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* Interactive Video Screening Theater */
+    .video-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .video-theater-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-media-wrapper {
+      position: relative;
+      width: 100%;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .video-media-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-content-pane {
+      padding: 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .video-meta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-family: var(--font-latin-sans);
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-title {
+      font-family: var(--font-arabic-serif);
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .video-extracted-insights {
+      background: rgba(13, 23, 33, 0.7);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-right: 3px solid var(--color-gold);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    .video-recommendation {
+      font-size: 0.9rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .video-recommendation strong {
+      color: var(--color-gold-light);
+    }
+
+    /* 3D Spline Interactive Simulation Wireframe */
+    .spline-simulator-container {
+      background: linear-gradient(135deg, #0d1721 0%, #152433 100%);
+      border: 1px solid var(--color-gold);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lux);
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .simulator-stage {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      border-radius: var(--radius-md);
+      background: radial-gradient(circle at center, #1b354b 0%, #090f15 80%);
+      border: 1px dashed rgba(197, 160, 89, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .fountain-3d-node {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid var(--color-gold);
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, rgba(27, 53, 75, 0.8) 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 60px rgba(197, 160, 89, 0.35), inset 0 0 30px rgba(197, 160, 89, 0.2);
+      transform: rotateX(60deg);
+      animation: pulseWater 6s infinite ease-in-out;
+      position: relative;
+    }
+
+    .floating-emblem-node {
+      position: absolute;
+      top: 28%;
+      width: 90px;
+      height: 90px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid var(--color-gold);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(45deg);
+      box-shadow: 0 0 40px rgba(197, 160, 89, 0.8);
+      animation: floatEmblem 4s infinite ease-in-out;
+    }
+
+    .floating-emblem-node img {
+      width: 70%;
+      height: 70%;
+      transform: rotate(-45deg);
+      object-fit: contain;
+    }
+
+    @keyframes floatEmblem {
+      0%, 100% { transform: translateY(0) rotate(45deg); }
+      50% { transform: translateY(-16px) rotate(45deg); }
+    }
+
+    @keyframes pulseWater {
+      0%, 100% { box-shadow: 0 0 40px rgba(197, 160, 89, 0.25); }
+      50% { box-shadow: 0 0 80px rgba(197, 160, 89, 0.5); }
+    }
+
+    .hotspot-pin {
+      position: absolute;
+      background: var(--color-surface);
+      border: 1px solid var(--color-gold);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-gold-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      transition: var(--transition-smooth);
+    }
+
+    .hotspot-pin:hover {
+      transform: scale(1.08);
+      background: var(--color-gold);
+      color: var(--color-deep-indigo);
+    }
+
+    .hotspot-pin::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      box-shadow: 0 0 10px var(--color-gold);
+    }
+    .hotspot-pin:hover::before {
+      background: #000;
+    }
+
+    .pin-1 { top: 20%; right: 15%; }
+    .pin-2 { top: 30%; left: 18%; }
+    .pin-3 { bottom: 22%; right: 22%; }
+    .pin-4 { bottom: 25%; left: 20%; }
+
+    .simulator-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .timeline-steps {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline-step {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--color-border-subtle);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-step.active, .timeline-step:hover {
+      background: rgba(197, 160, 89, 0.15);
+      border-color: var(--color-gold);
+      color: var(--color-gold-light);
+    }
+
+    /* Spatial Navigator Tabs */
+    .sanctuaries-tabs {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .tab-btn {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-subtle);
+      color: var(--color-text-muted);
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      font-family: var(--font-arabic-sans);
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--color-gold);
+      color: var(--color-deep-indigo);
+      border-color: var(--color-gold);
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.35);
+    }
+
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Homepage 8-Chapter Architecture */
+    .chapter-timeline {
+      display: grid;
+      gap: 2rem;
+      position: relative;
+    }
+
+    .chapter-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 27px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-gold), transparent);
+    }
+
+    .chapter-item {
+      display: flex;
+      gap: 2rem;
+      position: relative;
+    }
+
+    .chapter-index {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 2px solid var(--color-gold);
+      color: var(--color-gold);
+      font-family: var(--font-latin-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.25);
+      z-index: 2;
+    }
+
+    .chapter-content {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      flex: 1;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+
+    .chapter-content:hover {
+      border-color: var(--color-gold);
+      transform: translateX(-5px);
+    }
+
+    .chapter-title-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chapter-heading {
+      font-family: var(--font-arabic-serif);
+      font-size: 1.35rem;
+      color: #fff;
+    }
+
+    .chapter-badge {
+      font-size: 0.75rem;
+      font-family: var(--font-latin-sans);
+      color: var(--color-gold);
+      background: rgba(197, 160, 89, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+    }
+
+    .chapter-summary {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Agency Deliverable Action Bar */
+    .action-cta-box {
+      margin-top: 5rem;
+      background: linear-gradient(135deg, #162534 0%, #0d1721 100%);
+      border: 2px solid var(--color-gold);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-lux);
+    }
+
+    .cta-heading {
+      font-family: var(--font-arabic-serif);
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .cta-heading span {
+      color: var(--color-gold);
+    }
+
+    .cta-text {
+      max-width: 750px;
+      margin: 0 auto 2.5rem;
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-lux-primary {
+      background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+      color: var(--color-deep-indigo);
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 10px 25px rgba(197, 160, 89, 0.35);
+      transition: var(--transition-smooth);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-lux-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(197, 160, 89, 0.5);
+    }
+
+    .btn-lux-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid var(--color-border);
+      padding: 1rem 2.2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .btn-lux-secondary:hover {
+      background: rgba(197, 160, 89, 0.15);
+      border-color: var(--color-gold);
+      color: var(--color-gold-light);
+    }
+
+    /* Footer */
+    footer.agency-footer {
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 900px) {
+      .logo-spotlight {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+      .grid-2, .video-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+      .chapter-timeline::before {
+        right: 20px;
+      }
+      .chapter-index {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Agency Header -->
+  <header class="agency-nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand-id">
+        <div class="brand-logo-frame">
+          <img src="./assets/qasioun logo.jpg" alt="Qasioun Emblem" />
+        </div>
+        <div class="brand-titles">
+          <h1>مطاعم ومنتجع قاسيون</h1>
+          <span>Qasioun Hospitality Sanctuary • Irbid</span>
+        </div>
+      </a>
+      <div class="agency-tag">
+        ملف التوجيه الإبداعي والهوية الرقمية 3D
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Presentation Header -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-pretitle">Luxury Hospitality Strategic Concept</div>
+      <h2 class="hero-title">
+        التحول الرقمي من مجرد مطعم إلى<br />
+        <span>وجهة الضيافة والبهجة الأولى في شمال الأردن</span>
+      </h2>
+      <p class="hero-subtitle">
+        دراسة شاملة للهوية المعمارية والتراثية، وتصميم رحلة تفاعلية ثلاثية الأبعاد (Interactive 3D Spline Experience) تُجسد روح قاسيون، أصالة الشام، ورحابة الضيافة الأردنية قبل أن تطأ قدم الزائر المكان.
+      </p>
+
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">6</span>
+          <div class="stat-label">صالات وأجنحة متخصصة</div>
+          <div class="stat-desc">من التراس البانورامي إلى قاعات المؤتمرات والاحتفالات</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">3D</span>
+          <div class="stat-label">مدخل تفاعلي بهندسة السبلين</div>
+          <div class="stat-desc">بحرة شامية مرخمة وشعار مذهب تفاعلي ثلاثي الأبعاد</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Zoo</span>
+          <div class="stat-label">حديقة حيوانات عائلية مدمجة</div>
+          <div class="stat-desc">طواويس، طيور نادرة، غزلان، ألبكة وجمال بيضاء</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">100%</span>
+          <div class="stat-label">أصالة دمشقية حية</div>
+          <div class="stat-desc">عراضة شامية، بوفيهات نحاسية ملكية، ومخبز تنور طازج</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1: BRAND STRATEGY & IDENTITY ANALYSIS -->
+  <section id="brand-strategy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Chapter 01 // Brand Foundations</span>
+        <h3 class="section-title">جوهر الهوية والتحول الاستراتيجي للمكان</h3>
+        <p class="section-desc">
+          التحليل الدقيق لفيديوهات المطعم يثبت أن قاسيون يمتلك مقومات منتجع ضيافة متكامل، وليس مجرد قائمة طعام (Linktree). زوار قاسيون يأتون لعيش تجربة شعورية متكاملة.
+        </p>
+      </div>
+
+      <!-- Logo Analysis Spotlight -->
+      <div class="logo-spotlight">
+        <div class="logo-visual">
+          <img src="./assets/qasioun logo.jpg" alt="Qasioun Emblem Detailed Analysis" />
+          <div class="logo-visual-caption">شعار قاسيون: الرقش الهندسي الدمشقي المائل بزاوية 45°</div>
+        </div>
+        <div class="logo-details">
+          <h3>تفكيك الشعار واللغة الهندسية التراثية</h3>
+          <p>
+            يمثل شعار قاسيون ميدالية أرابيسك دمشقية أصيلة، تعتمد على التناظر الرباعي الهندسي المائل، ومستلهمة مباشرة من زخارف فسيفساء البحرات الشامية وعمارة الأبلق التراثية:
+          </p>
+          <ul class="feature-list">
+            <li>
+              <strong>المعين الذهبي المركزي:</strong>
+              قلب الشعار يمثل بهجة اللقاء وكرم الضيافة الممتد من قمة جبل قاسيون الدمشقي.
+            </li>
+            <li>
+              <strong>التيجان الأربعة في الزوايا:</strong>
+              تُجسد الأبواب الأربعة المفتوحة للترحيب بالضيوف من كافة الجهات بروح النبالة والرفعة.
+            </li>
+            <li>
+              <strong>الخطوط الهندسية الكوفية (الأزرق النيلي الشامي):</strong>
+              تُحاكي جريان الماء الصافي وتداخل حارات دمشق القديمة بحرفية هندسية بديعة.
+            </li>
+            <li>
+              <strong>التجسيد الرقمي المقترح:</strong>
+              تحويل الشعار إلى عنصر معدني نحاسي مذهب (3D Brushed Gold) يطفو في فضاء الويب، يتفاعل ببريق واقعي مع زاوية حركة مؤشر الماوس وإضاءة المشهد.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Core Brand Pillars -->
+      <div class="grid-3" style="margin-top: 3rem;">
+        <div class="glass-card">
+          <div class="card-icon">🏛️</div>
+          <h4 class="card-title">العمارة واللغة المكانية</h4>
+          <p class="card-body">
+            تكامل فريد بين واجهات الزجاج البانورامي الحديثة والتراس المكشوف ذي السقف المتحرك، مع أقواس جصية بيضاء مضاءة مخفياً وأعمدة لولبية تستحضر سحر البيوت الشامية الفخمة.
+          </p>
+        </div>
+        <div class="glass-card">
+          <div class="card-icon">🥁</div>
+          <h4 class="card-title">المشاعر والذاكرة الحية</h4>
+          <p class="card-body">
+            المكان ينبض بالطاقة الاحتفالية (أهازيج العراضة الشامية بالسيوف والطبول، بهجة تخرج طلاب الجامعات، تجمعات العائلات الكبرى حول صواني المشاوي الحلبية وبوفيهات الحلويات الملكية).
+          </p>
+        </div>
+        <div class="glass-card">
+          <div class="card-icon">🦚</div>
+          <h4 class="card-title">التمايز الترفيهي البيئي</h4>
+          <p class="card-body">
+            انفراد قاسيون بحديقة الحيوانات العائلية الخاصة (Family Zoo Garden) يجعل الزيارة رحلة استكشافية متكاملة للأطفال والآباء تتجاوز تجربة تناول الوجبة إلى قضاء يوم كامل من البهجة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2: COLOR SYSTEM & VISUAL PALETTE -->
+  <section id="palette">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Chapter 02 // Color Architecture</span>
+        <h3 class="section-title">لوحة الألوان المستخرجة من واقع المكان</h3>
+        <p class="section-desc">
+          تم استخلاص هذه المنظومة اللونية بدقة من عناصر الشعار، خامات الرخام، جلد الكراسي المطرزة، والنحاسيات المذهبة لضمان تطابق التجربة الرقمية مع الواقع الحقيقي للمطعم.
+        </p>
+      </div>
+
+      <div class="color-swatch-grid">
+        <div class="swatch-card">
+          <div class="swatch-preview" style="background-color: #1b354b;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">الأزرق النيلي الشامي</div>
+            <span class="swatch-hex">#1B354B</span>
+            <div class="swatch-desc">لون الشعار الأساسي وعمق ليالي دمشق، يمنح شعوراً بالفخامة والسكينة والوقار.</div>
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-preview" style="background-color: #c5a059;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">الذهب الملكي المعتق</div>
+            <span class="swatch-hex">#C5A059</span>
+            <div class="swatch-desc">مستخرج من نحاس البوفيهات، وسام الشعار المطرز، والإنارة الدافئة للأقواس.</div>
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-preview" style="background-color: #c4683c;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">تيراكوتا التراس الدافئ</div>
+            <span class="swatch-hex">#C4683C</span>
+            <div class="swatch-desc">لون كراسي التراس الجلدية، فخار الأفران، وشمس الغروب الساطعة في إربد.</div>
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-preview" style="background-color: #f8f6f0;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">رخام كالاكاتا الألباستر</div>
+            <span class="swatch-hex">#F8F6F0</span>
+            <div class="swatch-desc">أرضيات الصالات اللامعة والبحرة المرخمة، تعكس النقاء والرحابة المعمارية.</div>
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-preview" style="background-color: #2e4a3e;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">أخضر السرو والياسمين</div>
+            <span class="swatch-hex">#2E4A3E</span>
+            <div class="swatch-desc">نباتات الفناء الطبيعية، حدائق الصالات الداخلية، وريش الطواويس الزمردي.</div>
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-preview" style="background-color: #b83253;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">وردي الجهنمية الاحتفالي</div>
+            <span class="swatch-hex">#B83253</span>
+            <div class="swatch-desc">أزهار قوس التصوير الدائري، حبات الرمان فوق المقبلات، وبهجة المناسبات.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: INTERACTIVE 3D SPLINE HERO BLUEPRINT -->
+  <section id="hero-3d">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Chapter 03 // 3D Interactive Core</span>
+        <h3 class="section-title">سيناريو مشهد السبلين (Spline 3D Hero Experience)</h3>
+        <p class="section-desc">
+          استبدال الواجهات التقليدية بمدخل ثلاثي الأبعاد تفاعلي غامر، يحاكي عبور الزائر من بوابة قاسيون الحجرية إلى فناء البحرة المركزية المضاءة بالمصابيح الدافئة.
+        </p>
+      </div>
+
+      <div class="spline-simulator-container">
+        <!-- Visual Simulation Wireframe -->
+        <div class="simulator-stage" id="splineStage">
+          <!-- Central Water Fountain -->
+          <div class="fountain-3d-node"></div>
+          
+          <!-- Floating 3D Logo Emblem -->
+          <div class="floating-emblem-node">
+            <img src="./assets/qasioun logo.jpg" alt="Floating Gold Crest" />
+          </div>
+
+          <!-- Interactive 3D Spatial Pins -->
+          <div class="hotspot-pin pin-1" title="انقر لاستكشاف الصالات الفاخرة">
+            <span>صالات الطعام والأقواس</span>
+          </div>
+          <div class="hotspot-pin pin-2" title="انقر للانتقال إلى التراس البانورامي">
+            <span>تراس قاسيون المكشوف</span>
+          </div>
+          <div class="hotspot-pin pin-3" title="انقر لزيارة حديقة الحيوانات">
+            <span>حديقة الحيوانات والطيور</span>
+          </div>
+          <div class="hotspot-pin pin-4" title="انقر لمشاهدة البوفيهات والمشاوي">
+            <span>البوفيه المذهب والمخبز</span>
+          </div>
+        </div>
+
+        <!-- Timeline / Camera Controls -->
+        <div class="simulator-controls">
+          <div class="timeline-steps">
+            <button class="timeline-step active" onclick="simulateScene(1)">المشهد 1: عتبة الدخول وشعار قاسيون المذهب</button>
+            <button class="timeline-step" onclick="simulateScene(2)">المشهد 2: الانسياب نحو البحرة وخرير الماء</button>
+            <button class="timeline-step" onclick="simulateScene(3)">المشهد 3: انفتاح البوابات نحو الصالات والحديقة</button>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--color-gold);">
+            ✦ محاكاة تفاعلية لحركة الكاميرا والعمق (Parallax Physics)
+          </div>
+        </div>
+      </div>
+
+      <!-- Choreography Breakdown -->
+      <div class="grid-3" style="margin-top: 2.5rem;">
+        <div class="glass-card">
+          <h4 class="card-title">1. الانسياب البصري (Camera Track)</h4>
+          <p class="card-body">
+            تبدأ الكاميرا بارتفاع 1.8م عند البوابة الحجرية، ثم تتحرك بانسيابية للأمام على محور Z لتصل إلى محاذاة البحرة مع تتبع ناعم لميلان الماوس (Gyro Parallax) بنسبة ±6 درجات.
+          </p>
+        </div>
+        <div class="glass-card">
+          <h4 class="card-title">2. فيزياء الإضاءة والمياه (Lighting)</h4>
+          <p class="card-body">
+            تموجات سطح ماء البحرة تعكس أضواء الفوانيس المعلقة، مع جسيمات ضوئية دافئة تطفو في الهواء (Floating Dust Motes) توحي بالأصالة والدفء الشامي.
+          </p>
+        </div>
+        <div class="glass-card">
+          <h4 class="card-title">3. نقاط العبور التفاعلية (Hotspots)</h4>
+          <p class="card-body">
+            كل نقطة تفاعلية تُمثل بوابة لأحد أركان المطعم، عند النقر عليها تقوم الكاميرا بالدوران بزاوية سينمائية لتكشف بطاقة معاينة ثلاثية الأبعاد تنبض بالحياة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4: SPATIAL NAVIGATOR (THE SEVEN SANCTUARIES) -->
+  <section id="sanctuaries">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Chapter 04 // Spatial Architecture</span>
+        <h3 class="section-title">محراب الصالات والأجنحة (The Seven Sanctuaries)</h3>
+        <p class="section-desc">
+          توثيق تفصيلي لكافة أركان مجمع قاسيون كما استخلصناها من الجولات المصورة، لتكون الأساس في تبويب تجربة التصفح الرقمية:
+        </p>
+      </div>
+
+      <!-- Tabs Navigation -->
+      <div class="sanctuaries-tabs">
+        <button class="tab-btn active" onclick="openSanctuary('yasamin')">صالة الياسمين (Al-Yasamin)</button>
+        <button class="tab-btn" onclick="openSanctuary('terrace')">تراس قاسيون (The Terrace)</button>
+        <button class="tab-btn" onclick="openSanctuary('zumorrod')">صالة الزمرد (VIP Lounge)</button>
+        <button class="tab-btn" onclick="openSanctuary('conferences')">قاعة المؤتمرات والاجتماعات</button>
+        <button class="tab-btn" onclick="openSanctuary('celebrations')">صالة الاحتفالات والتخرج</button>
+        <button class="tab-btn" onclick="openSanctuary('zoo')">حديقة الحيوانات العائلية</button>
+      </div>
+
+      <!-- Tab 1: Al-Yasamin -->
+      <div id="tab-yasamin" class="tab-pane active">
+        <div class="glass-card">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <div class="video-meta-tag">Heritage Fine Dining Hall</div>
+              <h4 class="card-title" style="font-size: 1.8rem;">صالة الياسمين: هيبة الأقواس ودفء اللقاء</h4>
+              <p class="card-body" style="margin-bottom: 1.25rem;">
+                تمثل قلب المطعم الداخلي؛ تتميز بصف متناغم من الأقواس الجصية البيضاء المزودة بإضاءات ليد مخفية دافئة، تفصل بينها أعمدة رخامية لولبية ملتفة، وتتزين الطاولات الرخامية بمفارش «قاسيون دايماً يجمعنا» وباقات الزنبق الأبيض الفاخرة.
+              </p>
+              <ul class="feature-list">
+                <li><strong>الاستخدام الرقمي:</strong> بطاقة العرض الرئيسية لتجربة العشاء العائلي الفاخر والغداء الرسمي.</li>
+                <li><strong>الأجواء:</strong> إضاءة دافئة 2700K، نباتات خضراء منسدلة، وتوزيع صوتي مريح.</li>
+              </ul>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border);">
+              <img src="./assets/qasioun logo.jpg" style="display:none;" />
+              <div style="background: linear-gradient(135deg, #1b354b, #101c27); padding: 3rem; text-align: center; color: var(--color-gold);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🏛️</div>
+                <div style="font-family: var(--font-arabic-serif); font-size: 1.3rem;">«قاسيون دايماً يجمعنا»</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">الأقواس البيضاء المضاءة مخفياً والأعمدة اللولبية التراثية</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Terrace -->
+      <div id="tab-terrace" class="tab-pane">
+        <div class="glass-card">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <div class="video-meta-tag">Sunlit Conservatory & Rooftop</div>
+              <h4 class="card-title" style="font-size: 1.8rem;">تراس قاسيون: إطلالة بانورامية وسقف متحرك</h4>
+              <p class="card-body" style="margin-bottom: 1.25rem;">
+                قاعة زجاجية علوية ساحرة تغمرها أشعة الشمس الطبيعية، مجهزة بسقف برغولا كهربائي متحرك يفتح صيفاً ويحمي شتاءً. تتألق بكراسي جلدية فاخرة بلون التيراكوتا البرتقالي الدافئ المطرز بختم قاسيون الدائري.
+              </p>
+              <ul class="feature-list">
+                <li><strong>الاستخدام الرقمي:</strong> الترويج لجلسات الإفطار الصباحي، الغداء المشمس، وأمسيات الشاي والشيشة.</li>
+                <li><strong>المميزات:</strong> إطلالة مفتوحة على مدينة إربد وجلسات واسعة ومريحة لجميع أفراد الأسرة.</li>
+              </ul>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); background: linear-gradient(135deg, #c4683c, #101c27); padding: 3rem; text-align: center; color: #fff;">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">☀️</div>
+              <div style="font-family: var(--font-arabic-serif); font-size: 1.3rem;">تراس قاسيون البانورامي</div>
+              <div style="font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 0.5rem;">الكراسي البرتقالية المطرزة وزجاج الإطلالة المشرق</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Al-Zumorrod -->
+      <div id="tab-zumorrod" class="tab-pane">
+        <div class="glass-card">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <div class="video-meta-tag">Ultra-Private VIP Suite</div>
+              <h4 class="card-title" style="font-size: 1.8rem;">صالة الزمرد: خصوصية الدبلوماسيين وكبار الشخصيات</h4>
+              <p class="card-body" style="margin-bottom: 1.25rem;">
+                جناح ملكي خاص مصمم للقاءات الرفيعة والوفود الرسمية؛ يجمع بين صالون جلدي وثيف باللون البني والبيج، وطاولة طعام خاصة محاطة بإضاءات جدارية مودرن وإطلالة زجاجية خاصة وعازلة للصوت.
+              </p>
+              <ul class="feature-list">
+                <li><strong>الاستخدام الرقمي:</strong> حجز كبار الزوار (VIP Booking Engine) مع خيار البوفيه الخاص وخدمة الخادم الشخصي.</li>
+              </ul>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); background: linear-gradient(135deg, #2e4a3e, #101c27); padding: 3rem; text-align: center; color: var(--color-gold);">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">💎</div>
+              <div style="font-family: var(--font-arabic-serif); font-size: 1.3rem;">صالة الزمرد الفاخرة</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">صالون رئاسي مغلق بطابع عصري فاخر</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Conferences -->
+      <div id="tab-conferences" class="tab-pane">
+        <div class="glass-card">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <div class="video-meta-tag">Corporate Boardroom Suite</div>
+              <h4 class="card-title" style="font-size: 1.8rem;">قاعة المؤتمرات والاجتماعات الرسمية</h4>
+              <p class="card-body" style="margin-bottom: 1.25rem;">
+                قاعة أعمال مجهزة بالكامل لشركات إربد والجامعات والمنظمات، مزودة بطاولة اجتماعات خشبية طويلة، شاشات عرض ذكية، وميكروفونات مندوبين مستقلة لكل مقعد مع كراسي جلدية هيدروليكية.
+              </p>
+              <ul class="feature-list">
+                <li><strong>الاستخدام الرقمي:</strong> نموذج مخصص لحجز اجتماعات الشركات وورش العمل مع باقات الضيافة والبريك.</li>
+              </ul>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); background: linear-gradient(135deg, #1b354b, #090f15); padding: 3rem; text-align: center; color: var(--color-gold);">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">🎙️</div>
+              <div style="font-family: var(--font-arabic-serif); font-size: 1.3rem;">قاعة المؤتمرات والاجتماعات</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">منظومة صوتية ومقاعد تنفيذية لاجتماعات القمة</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 5: Celebrations -->
+      <div id="tab-celebrations" class="tab-pane">
+        <div class="glass-card">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <div class="video-meta-tag">Grand Banquets & Gala Hall</div>
+              <h4 class="card-title" style="font-size: 1.8rem;">صالة الاحتفالات: أفراح التخرج والمناسبات</h4>
+              <p class="card-body" style="margin-bottom: 1.25rem;">
+                مساحة فسيحة مخصصة لحفلات التخرج (Class of 2026 كما يظهر في الفيديو)، الخطوبات، وأعياد الميلاد الكبرى. طاولات دائرية رخامية مزينة بزهور الأوركيد وأقواس تصوير مذهبة مع إضاءة احتفالية غامرة.
+              </p>
+              <ul class="feature-list">
+                <li><strong>الاستخدام الرقمي:</strong> حاسبة حجز المناسبات (Event Planner Tool) لتحديد عدد المقاعد وقائمة البوفيه وتنسيق الورد.</li>
+              </ul>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); background: linear-gradient(135deg, #b83253, #101c27); padding: 3rem; text-align: center; color: #fff;">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">🎓</div>
+              <div style="font-family: var(--font-arabic-serif); font-size: 1.3rem;">صالة الاحتفالات والفعاليات</div>
+              <div style="font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 0.5rem;">طاولات رخامية دائرية وأقواس ورود الذكريات</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 6: Zoo -->
+      <div id="tab-zoo" class="tab-pane">
+        <div class="glass-card">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <div class="video-meta-tag">Family Wildlife & Botanical Garden</div>
+              <h4 class="card-title" style="font-size: 1.8rem;">حديقة الحيوانات والطيور العائلية</h4>
+              <p class="card-body" style="margin-bottom: 1.25rem;">
+                المفاجأة الأكبر في مجمع قاسيون؛ حظائر نموذجية مغطاة ونظيفة تضم كائنات نادرة ومحبوبة: الألبكة والجمال البيضاء، الطواويس الملونة، طيور الفزنت المذهبة، الغزلان، وصغار الماعز البيضاء التي يتفاعل معها الأطفال بأمان تام.
+              </p>
+              <ul class="feature-list">
+                <li><strong>الاستخدام الرقمي:</strong> ركن عائلي جذاب تفاعلي يعرض بطاقات الحيوانات ويوضح القيمة الترفيهية للأطفال.</li>
+              </ul>
+            </div>
+            <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); background: linear-gradient(135deg, #2e4a3e, #0b131a); padding: 3rem; text-align: center; color: var(--color-gold);">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">🦙</div>
+              <div style="font-family: var(--font-arabic-serif); font-size: 1.3rem;">حديقة الحيوانات العائلية</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">بيئة آمنة ونظيفة تجمع بين متعة الطعام وترفيه الأطفال</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5: VIDEO ASSETS & LIVE SCREENING THEATER -->
+  <section id="media-theater">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Chapter 05 // Media Screening & Analysis</span>
+        <h3 class="section-title">غرفة المعاينة الرقمية: تحليل وتوظيف فيديوهات المطعم</h3>
+        <p class="section-desc">
+          تمت مراجعة جميع ملفات الفيديو الأصلية المزودة، وفيما يلي قراءة سينمائية لكل أصل مع تحديد موقعه الدقيق في الموقع الرقمي المقترح:
+        </p>
+      </div>
+
+      <div class="video-showcase-grid">
+
+        <!-- Video 1: Halls Overview -->
+        <div class="video-theater-card">
+          <div class="video-media-wrapper">
+            <video controls playsinline preload="metadata">
+              <source src="./assets/qasioun_all_halls_overview.mp4" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو المباشر.
+            </video>
+          </div>
+          <div class="video-content-pane">
+            <div>
+              <div class="video-meta-tag">Asset 01 • Architectural Walkthrough</div>
+              <h4 class="video-title">جولة الصالات الشاملة (All Halls Overview)</h4>
+              <div class="video-extracted-insights">
+                <strong>اللقطات المستخلصة:</strong> واجهة المبنى الخارجية الليلية، مدخل صالة الياسمين، مفرش «قاسيون دايماً يجمعنا»، كراسي التراس البرتقالية، صالة الزمرد VIP، قاعة المؤتمرات، وصالة حفلات التخرج 2026.
+              </div>
+            </div>
+            <div class="video-recommendation">
+              <strong>التوظيف الرقمي المقترح:</strong> تقطيع الفيديو إلى مقاطع خلفية قصيرة صامتة (Seamless 4s Loops) تظهر تلقائياً كخلفية عند التنقل بين تبويبات الصالات في الصفحة الرئيسية.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2: Courtyard & Fountain Tour -->
+        <div class="video-theater-card">
+          <div class="video-media-wrapper">
+            <video controls playsinline preload="metadata">
+              <source src="./assets/qasioun_countyard_fountain_event_halls_tour.mp4" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو المباشر.
+            </video>
+          </div>
+          <div class="video-content-pane">
+            <div>
+              <div class="video-meta-tag">Asset 02 • Atmosphere & Courtyard</div>
+              <h4 class="video-title">فناء البحرة والمرآة الوردية (Courtyard Tour)</h4>
+              <div class="video-extracted-insights">
+                <strong>اللقطات المستخلصة:</strong> نافورة الرخام الثمانية (البحرة)، حركة ماء السبيل، الجلسات الخارجية، مرآة التصوير الدائرية المحاطة بالورود الوردية، وضيوف يلتقطون صوراً لصواني الطعام.
+              </div>
+            </div>
+            <div class="video-recommendation">
+              <strong>التوظيف الرقمي المقترح:</strong> لقطة المرآة المزهرة ستكون أيقونة قسم "ذكريات الزوار وإنستغرام" (Social Proof Feed)، بينما لقطة تدفق ماء البحرة ستُستخدم كمرجع نسيجي لمشهد الـ 3D Spline.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3: Family Zoo Garden Experience -->
+        <div class="video-theater-card">
+          <div class="video-media-wrapper">
+            <video controls playsinline preload="metadata">
+              <source src="./assets/qasioun_family_zoo_garden_experience.mp4" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو المباشر.
+            </video>
+          </div>
+          <div class="video-content-pane">
+            <div>
+              <div class="video-meta-tag">Asset 03 • Wildlife & Family Joy</div>
+              <h4 class="video-title">حديقة الحيوانات والطيور (Family Zoo Garden)</h4>
+              <div class="video-extracted-insights">
+                <strong>اللقطات المستخلصة:</strong> طائر الفزنت الذهبي، ألوان الطاووس الملكي الباهرة، صغار الماعز الأبيض، الغزلان اللطيفة، الألبكة والجمال، وتفاعل العائلات والأطفال بسعادة واطمئنان.
+              </div>
+            </div>
+            <div class="video-recommendation">
+              <strong>التوظيف الرقمي المقترح:</strong> فيديو رئيسي في قسم "تجربة العائلة والطفل" مع بطاقات تفاعلية مصغرة لكل كائن حي تُعرض عند النقر (Interactive Wildlife Badges).
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 4: Food & Dining Experience -->
+        <div class="video-theater-card">
+          <div class="video-media-wrapper">
+            <video controls playsinline preload="metadata">
+              <source src="./assets/qasioun_food_and_dining_experience.mp4" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو المباشر.
+            </video>
+          </div>
+          <div class="video-content-pane">
+            <div>
+              <div class="video-meta-tag">Asset 04 • Gastronomy & Shami Folklore</div>
+              <h4 class="video-title">الملحمة الشامية: البوفيه الملكي والعراضة</h4>
+              <div class="video-extracted-insights">
+                <strong>اللقطات المستخلصة:</strong> فرقة العراضة الشامية باللباس التراثي ورقصات السيوف والطبول، السخانات النحاسية الذهبية الملكية، عربات خشبية تراثية لتقديم المشاوي، ومخبز قاسيون للخبز الطازج.
+              </div>
+            </div>
+            <div class="video-recommendation">
+              <strong>التوظيف الرقمي المقترح:</strong> رفع غطاء السخان النحاسي المذهب سيكون تأثير تفاعلي (Hover Reveal) في قائمة الطعام الرقمية، ومقطع العراضة سيكون خلفية قسم "أصالة التراث الشامي".
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 6: HOMEPAGE 8-CHAPTER ARCHITECTURE -->
+  <section id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Chapter 06 // Digital Journey</span>
+        <h3 class="section-title">هندسة الصفحة الرئيسية (ثمانية فصول من الإبهار)</h3>
+        <p class="section-desc">
+          استراتيجية المحتوى المصممة لتحويل كل زائر رقمي إلى حجز مؤكد، مع الانتقال السلس بين الاستكشاف البصري وطلب الحجز:
+        </p>
+      </div>
+
+      <div class="chapter-timeline">
+        <div class="chapter-item">
+          <div class="chapter-index">01</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل الأول: البوابة التفاعلية ثلاثية الأبعاد (Interactive 3D Threshold)</h4>
+              <span class="chapter-badge">Spline 3D • Hero Section</span>
+            </div>
+            <p class="chapter-summary">
+              مشهد ثلاثي الأبعاد غامر لفناء البحرة وشعار قاسيون النحاسي العائم، مع نقاط عبور ذهبية تفاعلية (Hotspots) تأخذ الزائر في جولة افتراضية مباشرة وأزرار حجز سريعة.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">02</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل الثاني: المانيفستو «قاسيون دايماً يجمعنا»</h4>
+              <span class="chapter-badge">Brand Manifesto • Cultural Story</span>
+            </div>
+            <p class="chapter-summary">
+              سرد شاعري راقٍ يربط بين كرم الشام الأصيل وطيبة أهل إربد والأردن، مع إبراز أرقام المكان (6 صالات متخصصة، حديقة حيوانات، طاقة استيعابية تتجاوز 1000 ضيف).
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">03</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل الثالث: دليل الصالات والأجنحة (The Sanctuaries Navigator)</h4>
+              <span class="chapter-badge">Interactive Spatial Showcase</span>
+            </div>
+            <p class="chapter-summary">
+              مستعرض تفاعلي يبدل خلفيات الفيديو والصور بنعومة لعرض صالة الياسمين، تراس قاسيون، صالة الزمرد، قاعة المؤتمرات، وصالات الاحتفالات مع مواصفات كل قاعة.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">04</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل الرابع: ملحمة المذاق الشامي (Digital Culinary Menu)</h4>
+              <span class="chapter-badge">Replacing Linktree • Gourmet Experience</span>
+            </div>
+            <p class="chapter-summary">
+              استبدال رابط اللينك-تري البسيط بكتالوج رقمي فاخر: بوفيه قاسيون المفتوح، صواني المشاوي الحلبية، مخبز التنور، والمقبلات الشامية، مع إمكانية تصفح المكونات وتحميل الـ PDF الأنيق.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">05</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل الخامس: واحة الحياة البرية والطفل (Family Zoo Sanctuary)</h4>
+              <span class="chapter-badge">Exclusive Differentiator</span>
+            </div>
+            <p class="chapter-summary">
+              إبراز ميزة قاسيون الحصرية؛ بطاقات تعريفية مرحة بالطاووس، الألبكة، طيور الفزنت، مع طمأنة الأهالي بشأن معايير النظافة والبيئة الآمنة لأطفالهم.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">06</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل السادس: الأفراح والمؤتمرات (Celebrations & Business B2B)</h4>
+              <span class="chapter-badge">High-Ticket Booking Engine</span>
+            </div>
+            <p class="chapter-summary">
+              محرك ذكي لحجز حفلات التخرج، الأعراس، والاجتماعات الرسمية، يتيح للعميل اختيار عدد المقاعد، نوع البوفيه، والتجهيزات المطلوبة بضغطة زر.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">07</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل السابع: بهجة الشام والذكريات (Cinema, Arada & Instagram Moments)</h4>
+              <span class="chapter-badge">Living Atmosphere & Social Proof</span>
+            </div>
+            <p class="chapter-summary">
+              شريط فيديو سينمائي يعرض رقصات العراضة الشامية، صور الزوار أمام المرآة الوردية الدائرية، وتقييمات العائلات السعيدة لتعزيز الثقة الفورية.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter-item">
+          <div class="chapter-index">08</div>
+          <div class="chapter-content">
+            <div class="chapter-title-group">
+              <h4 class="chapter-heading">الفصل الثامن: الكونسيرج ومحرك الحجز المباشر (Direct VIP Concierge)</h4>
+              <span class="chapter-badge">Instant Conversion & Contact</span>
+            </div>
+            <p class="chapter-summary">
+              حجز الطاولات المباشر، التواصل السريع عبر واتساب مع خدمة الكونسيرج، وخريطة تفاعلية للوصول السلس إلى مجمع قاسيون في إربد مع تفاصيل مواقف السيارات والاصطفاف.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Call to Agency Next Steps -->
+      <div class="action-cta-box">
+        <h4 class="cta-heading">جاهزون لبناء <span>وجهة قاسيون الرقمية الفاخرة</span></h4>
+        <p class="cta-text">
+          هذا الملف يضع الأساس الرؤيوي والمعماري الكامل. الخطوة التالية هي البدء في بناء موقع الويب المتكامل وتطوير مشهد الـ 3D Spline ليصبح قاسيون علامة فارقة في عالم الضيافة الرقمية.
+        </p>
+        <div class="cta-btn-group">
+          <button class="btn-lux-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <span>✦ مراجعة الرؤية من البداية</span>
+          </button>
+          <button class="btn-lux-secondary" onclick="alert('تم اعتماد المعايير بنجاح! جاهزون للانتقال لمرحلة بناء الموقع الرقمي.')">
+            <span>اعتماد التوجيه الاستراتيجي</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="agency-footer">
+    <div class="container">
+      <p style="margin-bottom: 0.5rem; color: var(--color-gold);">
+        مطاعم ومنتجع قاسيون • إربد، المملكة الأردنية الهاشمية
+      </p>
+      <p>
+        وثيقة التصميم الإبداعي والهوية التفاعلية الرقمية ثلاثية الأبعاد • إعداد فريق الاستراتيجية الإبداعية وتصميم تجارب الضيافة الفاخرة
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript for Simulator & Tabs -->
+  <script>
+    function openSanctuary(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      const targetPane = document.getElementById('tab-' + tabId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    }
+
+    function simulateScene(step) {
+      document.querySelectorAll('.timeline-step').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const stage = document.getElementById('splineStage');
+      const emblem = document.querySelector('.floating-emblem-node');
+      const fountain = document.querySelector('.fountain-3d-node');
+
+      if (step === 1) {
+        stage.style.background = 'radial-gradient(circle at center, #1b354b 0%, #090f15 80%)';
+        emblem.style.transform = 'translateY(0) scale(1) rotate(45deg)';
+        fountain.style.transform = 'rotateX(60deg) scale(1)';
+      } else if (step === 2) {
+        stage.style.background = 'radial-gradient(circle at center, #2e4a3e 0%, #081017 80%)';
+        emblem.style.transform = 'translateY(-25px) scale(1.15) rotate(45deg)';
+        fountain.style.transform = 'rotateX(55deg) scale(1.2)';
+      } else if (step === 3) {
+        stage.style.background = 'radial-gradient(circle at center, #c4683c 0%, #0d1721 80%)';
+        emblem.style.transform = 'translateY(-40px) scale(1.3) rotate(45deg)';
+        fountain.style.transform = 'rotateX(50deg) scale(1.35)';
+      }
+    }
+
+    // Mouse Parallax Effect on Spline Stage
+    const splineStage = document.getElementById('splineStage');
+    if (splineStage) {
+      splineStage.addEventListener('mousemove', (e) => {
+        const rect = splineStage.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        
+        const emblem = document.querySelector('.floating-emblem-node');
+        if (emblem) {
+          emblem.style.transform = `translate(${x * 25}px, ${y * 25}px) rotate(45deg)`;
+        }
+      });
+
+      splineStage.addEventListener('mouseleave', () => {
+        const emblem = document.querySelector('.floating-emblem-node');
+        if (emblem) {
+          emblem.style.transform = 'translate(0, 0) rotate(45deg)';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

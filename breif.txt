@@ -1,0 +1,295 @@
+Qasioun Digital Experience
+
+Premium Website Concept & Interactive 3D Hero
+
+⸻
+
+1. Project Overview
+
+Create a premium digital experience for Qasioun Restaurant in Irbid, Jordan.
+
+The goal is not to build a traditional restaurant website.
+
+The goal is to transform Qasioun’s online presence from a simple social media presence into a complete hospitality experience that represents the restaurant as a destination.
+
+Qasioun is not only about food. It represents:
+
+* Restaurant experience
+* Family atmosphere
+* Outdoor seating
+* Zoo garden experience
+* Events and celebration halls
+* Traditional Levantine hospitality
+
+⸻
+
+2. Creative Vision
+
+Main Concept:
+
+“A journey through Qasioun”
+
+The visitor should feel like they are entering the restaurant digitally before visiting physically.
+
+The website should communicate:
+
+* Warm hospitality
+* Syrian/Damascene heritage
+* Family experiences
+* Premium dining
+* Memorable occasions
+
+The experience should feel closer to a luxury hotel, resort, or destination website rather than a normal restaurant website.
+
+⸻
+
+3. Brand Direction
+
+Brand Personality:
+
+* Elegant
+* Traditional
+* Warm
+* Family-oriented
+* Premium
+* Welcoming
+
+Inspiration:
+
+Damascene heritage combined with Irbid hospitality.
+
+Visual inspiration:
+
+* Traditional stone architecture
+* Arabic patterns
+* Wooden details
+* Warm lighting
+* Green spaces
+* Water elements
+* Authentic dining atmosphere
+
+⸻
+
+4. Website Main Goal
+
+The website should help visitors:
+
+1. Discover the Qasioun experience
+2. Explore different areas of the restaurant
+3. View the menu easily
+4. Book visits and events
+5. Understand that Qasioun is more than a restaurant
+
+⸻
+
+5. Hero Section Concept
+
+The hero should be the strongest visual element.
+
+Preferred direction:
+
+Interactive 3D Experience
+
+Using Spline or similar web 3D technology.
+
+The scene should represent a digital journey inside Qasioun.
+
+⸻
+
+Hero Scenario:
+
+Scene 1:
+
+The visitor starts outside a beautiful traditional entrance.
+
+Elements:
+
+* Stone entrance
+* Qasioun logo integration
+* Warm lights
+* Plants
+* Traditional details
+
+Camera slowly moves forward.
+
+⸻
+
+Scene 2:
+
+The camera enters the main courtyard.
+
+Elements:
+
+* Fountain
+* Outdoor seating
+* Traditional textures
+* Trees and greenery
+* Lantern lighting
+* Relaxing family atmosphere
+
+⸻
+
+Scene 3:
+
+The experience reveals different zones:
+
+Restaurant Area
+
+Shows:
+
+* Dining atmosphere
+* Tables
+* Food experience
+
+Family Zoo Garden
+
+Shows:
+
+* Green spaces
+* Family activities
+* Entertainment atmosphere
+
+Events & Halls
+
+Shows:
+
+* Celebration spaces
+* Meeting areas
+* Premium event feeling
+
+⸻
+
+6. Interactive Elements
+
+Possible interactions:
+
+* Explore restaurant
+* View outdoor seating
+* Discover family area
+* Explore halls
+* Open menu
+* Book reservation
+
+Interactions should be elegant and simple.
+
+Avoid making it feel like a game.
+
+⸻
+
+7. Visual Style
+
+Preferred style:
+
+Semi-realistic premium 3D
+
+Not:
+
+* Cartoon
+* Game style
+* Overly futuristic
+
+The feeling should be:
+
+* Luxury hospitality
+* Modern website experience
+* Authentic cultural identity
+
+⸻
+
+8. Technical Requirements
+
+Technology direction:
+
+* Spline 3D for hero experience
+* Web optimized assets
+* Fast loading
+* Mobile responsive
+* Smooth animations
+* Elegant transitions
+
+Important:
+
+Performance is a priority.
+
+The experience must look impressive while remaining suitable for a real website.
+
+⸻
+
+9. Website Structure
+
+Recommended sections:
+
+Hero
+
+Interactive 3D experience.
+
+Discover Qasioun
+
+Introduction to the brand.
+
+Experiences
+
+Cards/sections:
+
+* Restaurant
+* Outdoor seating
+* Family zoo garden
+* Events halls
+
+Menu
+
+Replace simple Linktree experience with a premium menu presentation.
+
+Reservations
+
+Booking options:
+
+* Restaurant visit
+* Events
+* Meetings
+* Celebrations
+
+Gallery
+
+Show:
+
+* Food
+* Atmosphere
+* Spaces
+* Events
+
+Contact
+
+Location and communication.
+
+⸻
+
+10. Provided Assets
+
+Available references:
+
+* Qasioun logo
+* Restaurant videos
+* Food videos
+* Hall tours
+* Fountain/courtyard videos
+* Family zoo garden videos
+* Atmosphere footage
+
+Analyze these materials to extract:
+
+* Colors
+* Materials
+* Architecture
+* Lighting
+* Customer experience
+
+⸻
+
+11. Final Objective
+
+Create a concept that makes the restaurant owner think:
+
+“This represents what Qasioun can become digitally.”
+
+The result should feel like a premium agency presentation, not a regular restaurant website.

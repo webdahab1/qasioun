@@ -507,12 +507,10 @@ ul{list-style:none}
 
 .map-frame{
   margin-top:1.5rem;aspect-ratio:16/10;background:var(--placemat-deep);
-  border:1px solid rgba(226,189,99,.2);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:.9rem;text-align:center;padding:1.5rem;
+  border:1px solid rgba(226,189,99,.2);overflow:hidden;
 }
-.map-logo{width:56px;height:56px;object-fit:contain}
-.map-frame p{font-size:.88rem;color:var(--jasmine-soft);max-width:30ch}
+.map-frame iframe{display:block;width:100%;height:100%;border:0}
+.map-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
 
 /* =========================== FOOTER ===================================== */
 .foot{background:var(--placemat-deep);color:var(--jasmine-soft);padding-block:clamp(3rem,6vw,5rem) 2rem}
@@ -1123,9 +1121,11 @@ ul{list-style:none}
         </dl>
 
         <div class="map-frame">
-          <img class="map-logo" src="assets/brand/qasioun-logo-on-dark-256.png" alt="" width="56" height="56" loading="lazy" />
-          <p>تُدرَج الخريطة عند اعتماد الإحداثيات.</p>
-          <a class="btn btn--ghostLight" href="https://www.google.com/maps/search/?api=1&query=Qasioun+Restaurant+Irbid" target="_blank" rel="noopener">افتح الموقع في خرائط جوجل</a>
+          <iframe title="موقع مطاعم قاسيون على الخريطة — إربد" src="https://www.openstreetmap.org/export/embed.html?bbox=35.87566%2C32.53720%2C35.88466%2C32.54280&amp;layer=mapnik&amp;marker=32.5399955%2C35.8801635" loading="lazy"></iframe>
+        </div>
+        <div class="map-links">
+          <a class="btn btn--ghostLight" href="https://maps.app.goo.gl/sncj2k38USBHShaQ9" target="_blank" rel="noopener">الاتجاهات عبر خرائط جوجل</a>
+          <a class="btn btn--ghostLight" href="https://www.openstreetmap.org/?mlat=32.5399955&amp;mlon=35.8801635#map=17/32.5399955/35.8801635" target="_blank" rel="noopener">افتح في OpenStreetMap</a>
         </div>
       </div>
     </div>
@@ -1238,6 +1238,8 @@ ul{list-style:none}
   "priceRange":"$$",
   "servesCuisine":["شامية","أردنية","مشاوي"],
   "address":{"@type":"PostalAddress","addressLocality":"إربد","addressCountry":"JO"},
+  "geo":{"@type":"GeoCoordinates","latitude":32.5399955,"longitude":35.8801635},
+  "hasMap":"https://maps.app.goo.gl/sncj2k38USBHShaQ9",
   "openingHoursSpecification":[{
     "@type":"OpeningHoursSpecification",
     "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],

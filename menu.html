@@ -58,6 +58,7 @@
   --ease:cubic-bezier(.16,1,.3,1);
   --ease-in:cubic-bezier(.7,0,.84,0);
   --bar:64px;
+  --ribbon:64px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 16px);-webkit-text-size-adjust:100%}
@@ -117,10 +118,11 @@ img,video{display:block;max-width:100%}
 .tabs-bar{position:absolute;bottom:0;right:0;height:2px;width:0;background:var(--gold);transition:transform .55s var(--ease),width .55s var(--ease)}
 
 /* their printed «قاسيون دايماً يجمعنا» border, drifting in reading direction */
-.ribbon{position:absolute;inset-inline:0;bottom:0;height:42px;overflow:hidden;background:rgba(13,26,41,.7)}
+/* tall enough for the whole line of calligraphy, dots and descenders included */
+.ribbon{position:absolute;inset-inline:0;bottom:0;height:var(--ribbon);overflow:hidden;background:rgba(13,26,41,.7)}
 .ribbon::before{
   content:"";position:absolute;top:0;bottom:0;left:-260px;right:-260px;
-  background:url(assets/menu/ribbon.png) repeat-x 0 2px/255px 58px;opacity:.45;
+  background:url(assets/menu/ribbon.png) repeat-x 0 50%/255px 58px;opacity:.45;
   animation:drift 38s linear infinite;
 }
 @keyframes drift{to{transform:translateX(255px)}}
@@ -232,7 +234,7 @@ main{padding-block:1rem clamp(4rem,8vw,7rem);overflow-x:clip}
 .idx-list a[aria-current="true"] b{color:var(--gold)}
 
 /* =============================== FOOTER & TOP ============================ */
-.foot{position:relative;padding-top:42px;background:var(--navy)}
+.foot{position:relative;padding-top:var(--ribbon);background:var(--navy)}
 .foot .ribbon{top:0;bottom:auto;background:rgba(13,26,41,.6)}
 .foot-row{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;padding-block:1.8rem 2.2rem;color:var(--text-soft);font-size:.9rem}
 .foot-row a[dir="ltr"]{font-family:var(--f-latin);font-size:1.25rem;color:var(--gold);letter-spacing:.04em}

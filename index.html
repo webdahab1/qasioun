@@ -260,20 +260,14 @@ ul{list-style:none}
     linear-gradient(to bottom,rgba(13,26,41,.84) 0%,rgba(13,26,41,.64) 30%,rgba(13,26,41,.18) 54%,rgba(13,26,41,.3) 70%,rgba(13,26,41,.9) 100%),
     radial-gradient(ellipse at 50% 120%,rgba(181,137,47,.22),transparent 60%);
 }
-/* Headline pinned to the top of the hero, buttons to the bottom. */
+/* Buttons pinned to the bottom of the hero; the footage carries the rest. */
 .hero .wrap{
   width:min(1240px,100% - var(--gut)*2);
-  display:flex;flex-direction:column;justify-content:space-between;
+  display:flex;flex-direction:column;
 }
-
-.hero h1{
-  font-family:var(--f-display);font-weight:400;
-  font-size:clamp(2.6rem,8.5vw,6.2rem);
-  line-height:1.12;color:var(--jasmine);
-  text-wrap:balance;margin-bottom:2rem;
-  text-shadow:0 2px 18px rgba(13,26,41,.7);
-}
-.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap}
+/* The page heading stays for search engines and screen readers, off screen. */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:auto}
 .hero-ablaq{position:absolute;inset-inline:0;bottom:0}
 
 /* =========================== BANDS & HEADINGS ============================ */
@@ -714,7 +708,7 @@ ul{list-style:none}
   <div class="hero-scrim"></div>
 
   <div class="wrap">
-    <h1>قاسيون دايمًا يجمعنا</h1>
+    <h1 class="sr">مطاعم قاسيون — إربد</h1>
 
     <div class="hero-cta rise">
       <a href="#booking" class="btn btn--gold">احجز طاولتك أو قاعتك</a>
@@ -1328,7 +1322,7 @@ document.documentElement.classList.add('js');
 
   /* ---- entrance transitions ---- */
   // Wrap each heading's content so the line can rise out of its own box.
-  document.querySelectorAll('.hero h1, .sec-title').forEach(function (h) {
+  document.querySelectorAll('.sec-title').forEach(function (h) {
     var inner = document.createElement('span');
     while (h.firstChild) { inner.appendChild(h.firstChild); }
     h.appendChild(inner);

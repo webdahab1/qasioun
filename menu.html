@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>قائمة الطعام — مطاعم ومنتجع قاسيون، إربد</title>
+<meta name="description" content="قائمة مطاعم قاسيون في إربد: الصالة، الباريستا، والسفري — المشاوي، المأكولات الشعبية، الشاورما، المعجنات، المشروبات والحلويات." />
+<meta name="theme-color" content="#0d1a29" />
+<link rel="icon" type="image/png" href="assets/brand/favicon-64.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="مطاعم ومنتجع قاسيون" />
+<meta property="og:title" content="قائمة الطعام — مطاعم قاسيون، إربد" />
+<meta property="og:description" content="الصالة، الباريستا، والسفري — المشاوي والمأكولات الشعبية والمعجنات والحلويات." />
+<meta property="og:image" content="https://qasioun-irbid.jo/assets/menu/grills.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Hold the first paint until the brand fonts are ready, so the page never
+     shows a fallback face and then jumps to Ruqaa / Plex. Entrance animations
+     wait too, so they play in the real font. Capped at 2.5s on slow networks. -->
+<style>html.fonts-wait body{opacity:0}html.fonts-wait *,html.fonts-wait *::before,html.fonts-wait *::after{animation-play-state:paused!important}</style>
+<script>
+(function () {
+  var root = document.documentElement;
+  if (!document.fonts || !document.fonts.load) return;
+  root.classList.add('fonts-wait');
+  var ar = 'قاسيون', done = function () { root.classList.remove('fonts-wait'); };
+  Promise.all([
+    document.fonts.load('400 1em "Aref Ruqaa"', ar),
+    document.fonts.load('700 1em "Aref Ruqaa"', ar),
+    document.fonts.load('300 1em "IBM Plex Sans Arabic"', ar),
+    document.fonts.load('400 1em "IBM Plex Sans Arabic"', ar),
+    document.fonts.load('500 1em "IBM Plex Sans Arabic"', ar)
+  ]).then(done, done);
+  setTimeout(done, 2500);
+})();
+</script>
+
+
+<style>
+/* ===========================================================================
+   QASIOUN MENU
+   Night register of the site: placemat navy, lantern gold, jasmine text.
+   Signature: every category opens with its name in huge Ruqaa calligraphy
+   that rises whole out of its own baseline.
+   =========================================================================== */
+:root{
+  --night:#0d1a29; --navy:#16283f; --navy-2:#1b3150;
+  --text:#fbf9f4; --text-soft:#c2ccd6; --text-dim:#8fa0b1;
+  --gold:#e2bd63; --gold-deep:#b5892f;
+  --line:rgba(226,189,99,.16); --line-soft:rgba(194,204,214,.1);
+  --f-display:'Aref Ruqaa','Amiri',Georgia,serif;
+  --f-body:'IBM Plex Sans Arabic',-apple-system,'Segoe UI',sans-serif;
+  --f-latin:'Cormorant Garamond',Georgia,serif;
+  --gut:clamp(1rem,4.5vw,3.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-in:cubic-bezier(.7,0,.84,0);
+  --bar:64px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 16px);-webkit-text-size-adjust:100%}
+body{
+  background:var(--night);color:var(--text);
+  font-family:var(--f-body);font-weight:400;font-size:16px;line-height:1.6;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+img,video{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;top:-120px;inset-inline-start:0;z-index:200;background:var(--gold);color:var(--night);padding:.8rem 1.2rem;font-weight:600}
+.skip:focus{top:0}
+.wrap{width:min(1320px,100% - var(--gut)*2);margin-inline:auto}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;font-size:.88rem;font-weight:500;padding:.7rem 1.3rem;white-space:nowrap;transition:background .3s var(--ease),color .3s var(--ease)}
+.btn--gold{background:var(--gold-deep);color:#fff}
+.btn--gold:hover{background:var(--gold);color:var(--night)}
+
+/* =============================== MASTHEAD ================================ */
+.mast{position:relative;isolation:isolate;min-height:clamp(480px,76svh,760px);display:flex;flex-direction:column;overflow:hidden}
+.mast-media{position:absolute;inset:0;z-index:-2;background:var(--night);transition:opacity .6s var(--ease)}
+.mast-media video{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.mast-media.is-swapping{opacity:0}
+.mast::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(to bottom,rgba(13,26,41,.85) 0%,rgba(13,26,41,.35) 30%,rgba(13,26,41,.55) 62%,var(--night) 100%),
+    radial-gradient(ellipse at 80% 110%,rgba(181,137,47,.18),transparent 55%);
+}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px}
+.brand{display:flex;align-items:center;gap:.65rem}
+.brand img{width:44px;height:44px}
+.brand-name{line-height:1.15}
+.brand-name b{display:block;font-family:var(--f-display);font-weight:400;font-size:1.05rem}
+.brand-name span{display:block;font-family:var(--f-latin);font-size:.62rem;letter-spacing:.3em;color:var(--gold)}
+.top-links{display:flex;align-items:center;gap:1.2rem}
+.back{font-size:.88rem;color:var(--text-soft);transition:color .3s var(--ease)}
+.back:hover{color:var(--text)}
+
+.mast-body{margin-top:auto;padding-block:2rem clamp(4.2rem,9vw,5.8rem)}
+.mast h1{font-family:var(--f-display);font-weight:700;font-size:clamp(3.3rem,12vw,8.6rem);line-height:1.2;letter-spacing:-.01em}
+.word{display:inline-block;overflow:hidden;padding-block:.22em;margin-block:-.22em;vertical-align:bottom}
+.word > span{display:inline-block}
+.mast-note{min-height:1.6em;margin-top:.4rem;font-size:clamp(.88rem,1.6vw,1rem);color:var(--text-soft)}
+.mast-note span{display:inline-block}
+
+/* menu switch: three calligraphic words, a gold bar glides under the active one */
+.tabs{position:relative;display:inline-flex;gap:clamp(1.4rem,4vw,3rem);margin-top:clamp(1.6rem,4vw,2.4rem)}
+.tab{position:relative;padding-block:.35rem .6rem;font-family:var(--f-display);font-size:clamp(1.45rem,3.6vw,2.2rem);line-height:1.3;color:var(--text);opacity:.42;transition:opacity .4s var(--ease)}
+.tab:hover{opacity:.75}
+.tab[aria-selected="true"]{opacity:1}
+.tab .count{font-family:var(--f-body);font-size:.42em;font-weight:500;color:var(--gold);margin-inline-start:.35rem;vertical-align:.55em;font-variant-numeric:tabular-nums}
+.tabs-bar{position:absolute;bottom:0;right:0;height:2px;width:0;background:var(--gold);transition:transform .55s var(--ease),width .55s var(--ease)}
+
+/* their printed «قاسيون دايماً يجمعنا» border, drifting in reading direction */
+.ribbon{position:absolute;inset-inline:0;bottom:0;height:42px;overflow:hidden;background:rgba(13,26,41,.7)}
+.ribbon::before{
+  content:"";position:absolute;top:0;bottom:0;left:-260px;right:-260px;
+  background:url(assets/menu/ribbon.png) repeat-x 0 2px/255px 58px;opacity:.45;
+  animation:drift 38s linear infinite;
+}
+@keyframes drift{to{transform:translateX(255px)}}
+
+/* =============================== STICKY BAR ============================== */
+.bar{position:sticky;top:0;z-index:60;height:var(--bar);transition:background .35s var(--ease),box-shadow .35s var(--ease)}
+.bar.is-stuck{background:rgba(13,26,41,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.bar .wrap{height:100%;display:flex;align-items:center;gap:1rem}
+.idx-btn{flex:1;display:flex;align-items:center;gap:.8rem;min-width:0;height:44px;text-align:start}
+.idx-btn svg{flex:none;width:22px;height:22px;color:var(--gold);transition:transform .4s var(--ease)}
+.idx-btn:hover svg{transform:scaleX(1.25)}
+.idx-btn .lbl{font-size:.74rem;letter-spacing:.14em;color:var(--gold);white-space:nowrap;padding-inline-end:.9rem;border-inline-end:1px solid var(--line)}
+.now{position:relative;flex:1;min-width:0;height:2rem;overflow:hidden}
+.now span{position:absolute;inset-inline:0;top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--f-display);font-size:1.35rem;line-height:2rem}
+.now span small{font-family:var(--f-body);font-size:.62em;color:var(--text-dim);margin-inline-start:.5rem}
+.now span.in{animation:nowIn .5s var(--ease) both}
+.now span.out{animation:nowOut .4s var(--ease) both}
+@keyframes nowIn{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}
+@keyframes nowOut{to{transform:translateY(-100%);opacity:0}}
+
+.search{position:relative;flex:none;width:clamp(230px,26vw,320px)}
+.search svg{position:absolute;inset-inline-start:.8rem;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--text-dim);pointer-events:none}
+.search input{
+  width:100%;height:44px;font:inherit;font-size:.95rem;color:var(--text);
+  background:rgba(251,249,244,.06);border:1px solid var(--line);border-radius:22px;
+  padding:0 2.6rem;transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.search input::placeholder{color:var(--text-dim)}
+.search input:focus{outline:none;border-color:var(--gold);background:rgba(251,249,244,.1)}
+.search input::-webkit-search-cancel-button{display:none}
+.clear{position:absolute;inset-inline-end:.3rem;top:50%;transform:translateY(-50%);width:36px;height:36px;display:grid;place-items:center;font-size:1.3rem;color:var(--text-soft)}
+.clear[hidden]{display:none}
+.search-open,.search-close{display:none}
+
+/* =============================== CONTENT ================================= */
+/* titles wait off to the sides before they slide in; clip that sideways so it
+   can never create horizontal scroll (iOS pans overflow even with body clip) */
+main{padding-block:1rem clamp(4rem,8vw,7rem);overflow-x:clip}
+.status{min-height:1.5em;font-size:.9rem;color:var(--text-soft)}
+#sections{transition:opacity .28s var(--ease),transform .28s var(--ease)}
+#sections.is-leaving{opacity:0;transform:translateY(14px)}
+
+.cat{padding-top:clamp(3rem,7vw,5.5rem)}
+.cat:first-child{padding-top:clamp(1.5rem,4vw,2.5rem)}
+.cat[hidden]{display:none}
+
+.cat-head{position:relative}
+.cat-head.has-img{display:grid;grid-template-columns:minmax(0,1fr) clamp(230px,27vw,360px);gap:clamp(1.5rem,4vw,3.5rem);align-items:end}
+
+/* flow-root: stops the mask's negative margin collapsing into the heading.
+   The mask is padded so Ruqaa's tall strokes and dots are never clipped. */
+.cat-title{position:relative;display:flow-root;font-family:var(--f-display);font-weight:700;font-size:clamp(2.7rem,9.5vw,7.4rem);line-height:1.22;color:var(--text)}
+.ct{display:block;overflow:hidden;padding:.28em .1em;margin:-.28em -.1em}
+.ct > span{display:block}
+.cat-meta{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.cat-en{direction:ltr;font-family:var(--f-latin);font-style:italic;font-weight:500;font-size:clamp(1.15rem,2.2vw,1.6rem);color:var(--gold)}
+.cat-count{font-size:.85rem;color:var(--text-dim)}
+.cat-rule{display:block;height:1px;margin-top:1.1rem;background:linear-gradient(to left,var(--gold-deep),rgba(181,137,47,0));transform-origin:100% 50%}
+
+.cat-fig{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy)}
+/* taller than its frame and centred, so the ±28px parallax never shows an edge */
+.cat-fig img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;transform:translateY(var(--py,0px))}
+.cat-fig::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line)}
+
+.cols-head{display:flex;justify-content:flex-end;gap:.6rem;margin-top:clamp(1.5rem,3vw,2.2rem);padding-bottom:.35rem;font-size:.8rem;font-weight:500;color:var(--gold);border-bottom:1px solid var(--line)}
+.cols-head span,.pcell{flex:none;width:4.2rem;text-align:center}
+
+.items{list-style:none;margin-top:clamp(1.2rem,3vw,2rem)}
+.cols-head + .items{margin-top:0}
+.item{position:relative;break-inside:avoid;padding:1rem 0;border-bottom:1px solid var(--line-soft)}
+.item[hidden]{display:none}
+.item-main{display:flex;align-items:baseline;gap:.6rem}
+.item-name{font-size:1.05rem;font-weight:500;line-height:1.45}
+.lead{flex:1;min-width:1.2rem;height:1px;background:linear-gradient(to left,rgba(226,189,99,.35),rgba(226,189,99,.04));transform:translateY(-.32em);transform-origin:100% 50%;transition:transform .5s var(--ease),background .5s var(--ease)}
+.price{flex:none;font-weight:600;font-size:1.05rem;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap;transition:transform .4s var(--ease)}
+.price small{font-size:.68em;font-weight:400;color:var(--text-dim);margin-inline-start:.2em}
+.pcell{font-weight:600;font-size:.98rem;color:var(--gold);font-variant-numeric:tabular-nums}
+.pcell.none{color:var(--text-dim);font-weight:400}
+.item-en{display:block;direction:ltr;text-align:right;font-size:.82rem;color:var(--text-dim);margin-top:.1rem}
+.item-d{display:block;font-size:.85rem;color:var(--text-soft);margin-top:.2rem;line-height:1.6}
+
+@media (hover:hover) and (pointer:fine){
+  .item::before{content:"";position:absolute;top:0;bottom:0;right:-1rem;left:-1rem;background:linear-gradient(to left,rgba(226,189,99,.08),rgba(226,189,99,0) 75%);opacity:0;transition:opacity .4s var(--ease);pointer-events:none}
+  .item:hover::before{opacity:1}
+  .item:hover .price{transform:translateX(-4px)}
+  .item:hover .lead{background:linear-gradient(to left,rgba(226,189,99,.75),rgba(226,189,99,.08))}
+}
+
+.empty{margin-top:2.5rem;padding:2.2rem 1.5rem;border:1px dashed var(--line);text-align:center}
+.empty p{color:var(--text-soft)}
+.empty p b{color:var(--text)}
+.offers{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.1rem}
+.offers button{padding:.7rem 1.2rem;font-weight:500;color:var(--night);background:var(--gold);border-radius:22px;transition:background .3s var(--ease)}
+.offers button:hover{background:#fff}
+
+/* =============================== INDEX OVERLAY =========================== */
+.idx{position:fixed;inset:0;z-index:100;background:rgba(9,18,29,.97);display:flex;flex-direction:column;visibility:hidden;opacity:0;transition:opacity .45s var(--ease),visibility 0s linear .45s}
+.idx.is-open{visibility:visible;opacity:1;transition:opacity .45s var(--ease)}
+.idx-top{display:flex;align-items:center;justify-content:space-between;min-height:76px;border-bottom:1px solid var(--line)}
+.idx-top h2{font-family:var(--f-display);font-weight:400;font-size:1.5rem}
+.idx-close{width:48px;height:48px;display:grid;place-items:center;font-size:1.8rem;color:var(--text-soft);transition:color .3s,transform .5s var(--ease)}
+.idx-close:hover{color:var(--gold);transform:rotate(90deg)}
+.idx-list{list-style:none;flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(1.5rem,4vw,3.5rem);align-content:start;padding-block:clamp(1.5rem,4vw,3rem)}
+.idx-list a{display:block;padding:.8rem 0 .9rem;border-bottom:1px solid var(--line-soft)}
+.idx-list b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1.35;transition:color .3s var(--ease),transform .5s var(--ease)}
+.idx-list span{display:block;direction:ltr;text-align:right;font-family:var(--f-latin);font-style:italic;font-size:1rem;color:var(--text-dim);transition:color .3s var(--ease)}
+.idx-list a:hover b,.idx-list a:focus-visible b{color:var(--gold);transform:translateX(-8px)}
+.idx-list a:hover span{color:var(--gold)}
+.idx-list a[aria-current="true"] b{color:var(--gold)}
+
+/* =============================== FOOTER & TOP ============================ */
+.foot{position:relative;padding-top:42px;background:var(--navy)}
+.foot .ribbon{top:0;bottom:auto;background:rgba(13,26,41,.6)}
+.foot-row{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;padding-block:1.8rem 2.2rem;color:var(--text-soft);font-size:.9rem}
+.foot-row a[dir="ltr"]{font-family:var(--f-latin);font-size:1.25rem;color:var(--gold);letter-spacing:.04em}
+
+.to-top{position:fixed;left:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,2rem);z-index:50;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--night);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .4s var(--ease),transform .5s var(--ease)}
+.to-top.is-on{opacity:1;transform:none;pointer-events:auto}
+.to-top svg{width:20px;height:20px}
+
+/* =============================== MOTION ==================================
+   Everything above is the page at rest. The rules below only run with JS,
+   and every entrance is a keyframe with `both` fill, so it always lands.   */
+.js .word > span{animation:rise 1.1s var(--ease) both;animation-delay:calc(var(--w,0) * 140ms + 150ms)}
+.js .mast-note span,.js .tabs{animation:fadeUp .9s var(--ease) both}
+.js .mast-note span{animation-delay:.55s}
+.js .tabs{animation-delay:.7s}
+.js .mast-note span.swap{animation:noteSwap .6s var(--ease) both}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes noteSwap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* 130%: clears the mask's bottom padding too, so nothing peeks before it rises */
+.js .cat:not(.is-in) .ct > span{transform:translateY(130%)}
+.js .cat.is-in .ct > span{animation:titleIn 1.15s var(--ease) both}
+@keyframes titleIn{from{transform:translateY(130%)}to{transform:none}}
+
+.js .cat:not(.is-in) .cat-meta{opacity:0}
+.js .cat.is-in .cat-meta{animation:fadeUp .8s var(--ease) .35s both}
+.js .cat:not(.is-in) .cat-rule{transform:scaleX(0)}
+.js .cat.is-in .cat-rule{animation:draw 1.2s var(--ease) .25s both}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+.js .cat:not(.is-in) .cat-fig{clip-path:inset(100% 0 0 0)}
+.js .cat.is-in .cat-fig{animation:unveil 1.3s var(--ease) .1s both}
+.js .cat.is-in .cat-fig img{animation:settle 1.8s var(--ease) .1s both}
+@keyframes unveil{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle{from{scale:1.18}to{scale:1}}
+
+.js .cat:not(.is-in) .item,.js .cat:not(.is-in) .cols-head{opacity:0}
+.js .cat.is-in .item,.js .cat.is-in .cols-head{animation:itemIn .75s var(--ease) both;animation-delay:calc(var(--i,0) * 30ms + 300ms)}
+@keyframes itemIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* once a section has made its entrance (or was shown by search) it stays put —
+   no replay when rows are hidden and shown again */
+.js .cat.done .ct > span,.js .cat.done .cat-meta,.js .cat.done .cat-rule,.js .cat.done .cat-fig,
+.js .cat.done .cat-fig img,.js .cat.done .item,.js .cat.done .cols-head{animation:none}
+
+.js .idx.is-open .idx-list li{animation:fadeUp .7s var(--ease) both;animation-delay:calc(var(--i,0) * 28ms + 120ms)}
+
+/* =============================== RESPONSIVE ============================== */
+@media (min-width:760px){
+  .items--wide{columns:2;column-gap:clamp(2rem,5vw,4.5rem)}
+}
+@media (max-width:1023px){
+  .idx-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-head.has-img{grid-template-columns:minmax(0,1fr) clamp(180px,30vw,260px)}
+}
+@media (max-width:760px){
+  :root{--bar:58px}
+  .top-links .back{display:none}
+  .tabs{display:flex;justify-content:space-between;gap:.5rem;width:100%}
+  .tab{flex:1;text-align:center}
+  .tab .count{display:block;margin:0;vertical-align:0;font-size:.4em}
+  .cat-head.has-img{display:block}
+  .cat-fig{aspect-ratio:16/10;margin-top:1.3rem}
+  .cat-fig img{top:-12.5%;height:125%}
+  .idx-list{grid-template-columns:minmax(0,1fr)}
+  .idx-btn .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .now{height:1.9rem}
+  .now span{font-size:1.2rem;line-height:1.9rem}
+  .search{position:absolute;inset:0;z-index:2;width:auto;display:flex;align-items:center;gap:.5rem;padding-inline:var(--gut);background:var(--night);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility 0s linear .3s}
+  .search svg{inset-inline-start:calc(var(--gut) + .8rem)}
+  .search input{flex:1}
+  .clear{inset-inline-end:calc(var(--gut) + 3.2rem)}
+  .bar.is-searching .search{opacity:1;visibility:visible;transition:opacity .3s var(--ease)}
+  .search-open,.search-close{display:grid;place-items:center;width:44px;height:44px;flex:none;color:var(--text-soft)}
+  .search-open svg,.search-close svg{position:static;transform:none;width:22px;height:22px;color:currentColor}
+  .item{padding:.9rem 0}
+  .cols-head span,.pcell{width:3.2rem}
+  .pcell{font-size:.9rem}
+  .item--stack .item-main{flex-wrap:wrap;justify-content:flex-end;row-gap:.2rem}
+  .item--stack .item-name{flex-basis:100%}
+  .item--stack .lead{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition-duration:.001ms !important}
+  .js .cat .ct > span,.js .cat .cat-meta,.js .cat .item,.js .cat .cols-head{opacity:1 !important;transform:none !important}
+  .js .cat .cat-rule{transform:none !important}
+  .js .cat .cat-fig{clip-path:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#menuContent">تخطَّ إلى الأصناف</a>
+
+<header class="mast" aria-labelledby="menuTitle">
+  <div class="mast-media" id="mastMedia" aria-hidden="true">
+    <video id="mastVideo" muted autoplay loop playsinline preload="auto"></video>
+  </div>
+
+  <div class="wrap top">
+    <a class="brand" href="index.html" aria-label="مطاعم ومنتجع قاسيون — الصفحة الرئيسية">
+      <img src="assets/brand/qasioun-logo-on-dark-256.png" alt="" width="44" height="44" />
+      <span class="brand-name"><b>قاسيون</b><span>QASIOUN · IRBID</span></span>
+    </a>
+    <nav class="top-links" aria-label="روابط الموقع">
+      <a class="back" href="index.html">← الموقع الرئيسي</a>
+      <a class="btn btn--gold" href="index.html#booking">احجز طاولتك</a>
+    </nav>
+  </div>
+
+  <div class="wrap mast-body">
+    <h1 id="menuTitle">
+      <span class="word" style="--w:0"><span>سفرة</span></span>
+      <span class="word" style="--w:1"><span>قاسيون</span></span>
+    </h1>
+    <p class="mast-note"><span id="menuNote"></span></p>
+    <div class="tabs" role="tablist" aria-label="اختر القائمة" id="tabs">
+      <button type="button" class="tab" role="tab" id="tab-dinein" data-menu="dinein" aria-controls="menuContent">الصالة<span class="count"></span></button>
+      <button type="button" class="tab" role="tab" id="tab-barista" data-menu="barista" aria-controls="menuContent">الباريستا<span class="count"></span></button>
+      <button type="button" class="tab" role="tab" id="tab-takeaway" data-menu="takeaway" aria-controls="menuContent">السفري<span class="count"></span></button>
+      <span class="tabs-bar" id="tabsBar" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="ribbon" aria-hidden="true"></div>
+</header>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <button type="button" class="idx-btn" id="idxOpen" aria-haspopup="dialog" aria-controls="idx">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16"/></svg>
+      <span class="lbl">الأقسام</span>
+      <span class="now" id="now"></span>
+    </button>
+    <button type="button" class="search-open" id="searchOpen" aria-label="ابحث في القائمة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+    <div class="search" role="search">
+      <label class="sr" for="q">ابحث في القائمة</label>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="ابحث عن صنف، مثل: شاورما" autocomplete="off" enterkeyhint="search" aria-controls="menuContent" />
+      <button class="clear" id="clear" type="button" aria-label="امسح البحث" hidden>&times;</button>
+      <button type="button" class="search-close" id="searchClose" aria-label="أغلق البحث">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<main id="menuContent" role="tabpanel" tabindex="-1">
+  <div class="wrap">
+    <p class="status" id="status" aria-live="polite"></p>
+    <div id="sections"></div>
+    <div class="empty" id="empty" hidden></div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="ribbon" aria-hidden="true"></div>
+  <div class="wrap foot-row">
+    <p>جميع الأسعار بالدينار الأردني.</p>
+    <a href="tel:+962790088999" dir="ltr">+962 79 008 8999</a>
+    <a class="btn btn--gold" href="index.html#booking">احجز طاولتك</a>
+  </div>
+</footer>
+
+<div class="idx" id="idx" role="dialog" aria-modal="true" aria-labelledby="idxTitle">
+  <div class="wrap idx-top">
+    <h2 id="idxTitle">أقسام القائمة</h2>
+    <button type="button" class="idx-close" id="idxClose" aria-label="أغلق الأقسام">&times;</button>
+  </div>
+  <ul class="wrap idx-list" id="idxList"></ul>
+</div>
+
+<button type="button" class="to-top" id="toTop" aria-label="العودة إلى أعلى القائمة">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/menu/menu-data.js"></script>
+<script>
+(function () {
+  'use strict';
+  var DATA = window.QASIOUN_MENU;
+  if (!DATA) return;
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) root.classList.add('js');
+
+  var $ = function (id) { return document.getElementById(id); };
+  var elSections = $('sections'), elStatus = $('status'), elEmpty = $('empty'), elNote = $('menuNote'),
+      elQ = $('q'), elClear = $('clear'), elBar = $('bar'), elNow = $('now'), elMain = $('menuContent'),
+      elVideo = $('mastVideo'), elMedia = $('mastMedia'), elTabsBar = $('tabsBar'),
+      elIdx = $('idx'), elIdxList = $('idxList'), elToTop = $('toTop'),
+      elFoot = document.querySelector('.foot');
+
+  var MENUS = {};
+  DATA.menus.forEach(function (m) { MENUS[m.id] = m; });
+  var tabs = [].slice.call(document.querySelectorAll('.tab'));
+
+  /* ---------- text helpers ---------- */
+  function norm(s) {
+    return (s || '').toLowerCase()
+      .replace(/[ً-ٰٟـ]/g, '')
+      .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
+      .replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+      .replace(/[٠-٩]/g, function (d) { return String(d.charCodeAt(0) - 1632); })
+      .replace(/\s+/g, ' ').trim();
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  var money = function (n) { return n.toFixed(2); };
+  function items(n) {           // Arabic count agreement
+    return n === 1 ? 'صنف واحد' : n === 2 ? 'صنفان' : n <= 10 ? n + ' أصناف' : n + ' صنفًا';
+  }
+
+  /* ---------- search index for all menus ---------- */
+  var INDEX = {};
+  DATA.menus.forEach(function (m) {
+    INDEX[m.id] = [];
+    m.categories.forEach(function (c) {
+      c.items.forEach(function (it) { INDEX[m.id].push(norm([it[0], it[1], it[3], it[4], c.ar, c.en].join(' '))); });
+    });
+  });
+  tabs.forEach(function (t) {
+    var m = MENUS[t.dataset.menu];
+    t.querySelector('.count').textContent = m.categories.reduce(function (a, c) { return a + c.items.length; }, 0);
+  });
+
+  /* ---------- which menu to open ---------- */
+  var params = new URLSearchParams(location.search);
+  var current = MENUS[params.get('m')] ? params.get('m') : 'dinein';
+  var hashId = decodeURIComponent(location.hash.slice(1));
+  var inMenu = function (id, secId) { return MENUS[id].categories.some(function (c) { return 'c-' + c.id === secId; }); };
+  if (hashId && !inMenu(current, hashId)) {
+    DATA.menus.forEach(function (m) { if (inMenu(m.id, hashId)) current = m.id; });
+  }
+
+  var rows = [], sections = [], active = null;
+
+  /* ---------- render ---------- */
+  function render(id) {
+    var m = MENUS[id];
+    current = id; rows = []; sections = []; active = null;
+
+    tabs.forEach(function (t) {
+      var on = t.dataset.menu === id;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    elMain.setAttribute('aria-labelledby', 'tab-' + id);
+
+    var html = '';
+    m.categories.forEach(function (c) {
+      var multi = !!c.cols, count = c.items.length;
+      html += '<section class="cat" id="c-' + c.id + '" aria-labelledby="h-' + c.id + '">' +
+        '<header class="cat-head' + (c.img ? ' has-img' : '') + '"><div>' +
+          '<h2 class="cat-title" id="h-' + c.id + '"><span class="ct"><span>' + esc(c.ar) + '</span></span></h2>' +
+          '<p class="cat-meta"><span class="cat-en" lang="en">' + esc(c.en) + '</span><span class="cat-count">' + items(count) + '</span></p>' +
+          '<span class="cat-rule" aria-hidden="true"></span>' +
+        '</div>' +
+        (c.img ? '<figure class="cat-fig"><img src="assets/menu/' + c.img + '.webp" alt="" loading="lazy" width="640" height="800" /></figure>' : '') +
+        '</header>';
+      if (multi) {
+        html += '<div class="cols-head" aria-hidden="true">' +
+          c.cols.map(function (col) { return '<span>' + esc(col.ar) + '</span>'; }).join('') + '</div>';
+      }
+      html += '<ul class="items' + (!multi && count > 5 ? ' items--wide' : '') + '">';
+      c.items.forEach(function (it, i) {
+        var price;
+        if (multi) {
+          price = it[2].map(function (v, k) {
+            return v == null
+              ? '<span class="pcell none"><span aria-hidden="true">—</span><span class="sr">' + esc(c.cols[k].ar) + ': غير متوفر</span></span>'
+              : '<span class="pcell"><span class="sr">' + esc(c.cols[k].ar) + ': </span>' + money(v) + '<span class="sr"> دينار</span></span>';
+          }).join('');
+        } else {
+          price = '<span class="price">' + money(it[2]) + '<small>د.أ</small></span>';
+        }
+        html += '<li class="item' + (multi && c.cols.length >= 3 ? ' item--stack' : '') + '" data-cat="' + c.id + '" style="--i:' + Math.min(i, 18) + '">' +
+          '<div class="item-main"><span class="item-name">' + esc(it[0]) + '</span><span class="lead" aria-hidden="true"></span>' + price + '</div>' +
+          (it[1] ? '<span class="item-en" lang="en">' + esc(it[1]) + '</span>' : '') +
+          (it[3] ? '<span class="item-d">' + esc(it[3]) + '</span>' : '') +
+          '</li>';
+      });
+      html += '</ul></section>';
+    });
+    elSections.innerHTML = html;
+
+    var idx = INDEX[id], n = 0;
+    [].forEach.call(elSections.querySelectorAll('.item'), function (el) {
+      rows.push({ el: el, cat: el.dataset.cat, text: idx[n++] });
+    });
+    [].forEach.call(elSections.querySelectorAll('.cat'), function (el) {
+      var c = m.categories.filter(function (x) { return 'c-' + x.id === el.id; })[0];
+      sections.push({ el: el, cat: c, fig: el.querySelector('.cat-fig img') });
+    });
+
+    buildIndex();
+    applySearch();
+    setNote(m.note.ar);
+    setHero(m.hero);
+    placeTabsBar();
+    tick();
+  }
+
+  /* ---------- masthead: note + hero clip crossfade ---------- */
+  var firstNote = true;
+  function setNote(text) {
+    if (firstNote) { elNote.textContent = text; firstNote = false; return; }
+    elNote.classList.remove('swap'); void elNote.offsetWidth;
+    elNote.textContent = text; elNote.classList.add('swap');
+  }
+  var heroNow = null;
+  function setHero(name) {
+    if (!name || name === heroNow) return;
+    var src = 'renders/web/clips/' + name + '.mp4', poster = 'renders/web/clips/' + name + '.webp';
+    var load = function () {
+      elVideo.poster = poster;
+      if (reduce) { elVideo.removeAttribute('src'); elMedia.classList.remove('is-swapping'); return; }
+      elVideo.src = src;
+      elVideo.play().catch(function () {});
+      elMedia.classList.remove('is-swapping');
+    };
+    if (heroNow === null) load();
+    else { elMedia.classList.add('is-swapping'); setTimeout(load, 380); }
+    heroNow = name;
+  }
+  function placeTabsBar() {
+    var t = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0];
+    if (!t) return;
+    var parent = t.parentElement.getBoundingClientRect(), r = t.getBoundingClientRect();
+    elTabsBar.style.width = r.width + 'px';
+    elTabsBar.style.transform = 'translateX(' + (r.right - parent.right) + 'px)';
+  }
+
+  /* ---------- search ---------- */
+  function matches(text, terms) {
+    for (var t = 0; t < terms.length; t++) if (text.indexOf(terms[t]) === -1) return false;
+    return true;
+  }
+  function applySearch() {
+    var raw = elQ.value, q = norm(raw), terms = q ? q.split(' ') : [];
+    elClear.hidden = !raw;
+    var shown = 0, perCat = {};
+    rows.forEach(function (r) {
+      var ok = !terms.length || matches(r.text, terms);
+      r.el.hidden = !ok;
+      if (ok) { shown++; perCat[r.cat] = true; }
+    });
+    sections.forEach(function (s) {
+      s.el.hidden = !perCat[s.cat.id];
+      if (terms.length) s.el.classList.add('is-in', 'done');   // results appear at once, no replay
+    });
+    if (!terms.length) { elStatus.textContent = ''; elEmpty.hidden = true; return; }
+    var name = MENUS[current].ar;
+    if (shown) {
+      elStatus.textContent = items(shown) + ' في قائمة ' + name;
+      elEmpty.hidden = true;
+      return;
+    }
+    elStatus.textContent = '';
+    var offers = DATA.menus.filter(function (m) { return m.id !== current; }).map(function (m) {
+      var k = INDEX[m.id].filter(function (t) { return matches(t, terms); }).length;
+      if (!k) return '';
+      var label = k === 1 ? 'اعرض النتيجة' : k === 2 ? 'اعرض النتيجتين' : 'اعرض ' + k + ' ' + (k <= 10 ? 'نتائج' : 'نتيجة');
+      return '<button type="button" data-go="' + m.id + '">' + label + ' في قائمة ' + esc(m.ar) + '</button>';
+    }).join('');
+    elEmpty.innerHTML = '<p>لا يوجد صنف يطابق «<b>' + esc(raw) + '</b>» في قائمة ' + esc(name) + '.</p>' +
+      (offers ? '<div class="offers">' + offers + '</div>' : '<p>جرّب كلمة أقصر، مثل «كباب» أو «كنافة».</p>');
+    elEmpty.hidden = false;
+  }
+  elQ.addEventListener('input', function () { applySearch(); tick(); });
+  elClear.addEventListener('click', function () { elQ.value = ''; applySearch(); elQ.focus(); tick(); });
+  elEmpty.addEventListener('click', function (e) {
+    var go = e.target.closest('[data-go]');
+    if (go) switchTo(go.dataset.go);
+  });
+  $('searchOpen').addEventListener('click', function () { elBar.classList.add('is-searching'); elQ.focus(); });
+  $('searchClose').addEventListener('click', function () { elBar.classList.remove('is-searching'); $('searchOpen').focus(); });
+
+  /* ---------- switching menus ---------- */
+  var switching = false;
+  function switchTo(id) {
+    if (switching || (id === current && rows.length)) return;
+    switching = true;
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.menu === id)); });
+    placeTabsBar();
+    history.replaceState(null, '', id === 'dinein' ? location.pathname : '?m=' + id);
+    var top = elBar.getBoundingClientRect().top + window.scrollY;
+    var go = function () {
+      render(id);
+      elSections.classList.remove('is-leaving');
+      if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'instant' });
+      requestAnimationFrame(function () { tick(); switching = false; });
+    };
+    if (reduce) { go(); return; }
+    elSections.classList.add('is-leaving');
+    setTimeout(go, 280);
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { switchTo(t.dataset.menu); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      var step = e.key === 'ArrowLeft' ? 1 : -1;   // right-to-left: the next tab is to the left
+      var next = tabs[(tabs.indexOf(t) + step + tabs.length) % tabs.length];
+      next.focus(); switchTo(next.dataset.menu);
+    });
+  });
+
+  /* ---------- category index overlay ---------- */
+  var lastFocus = null;
+  function buildIndex() {
+    elIdxList.innerHTML = MENUS[current].categories.map(function (c, i) {
+      return '<li style="--i:' + i + '"><a href="#c-' + c.id + '" data-cat="' + c.id + '"><b>' + esc(c.ar) +
+        '</b><span lang="en">' + esc(c.en) + '</span></a></li>';
+    }).join('');
+  }
+  function openIdx() {
+    lastFocus = document.activeElement;
+    [].forEach.call(elIdxList.querySelectorAll('a'), function (a) {
+      a.setAttribute('aria-current', String(!!active && a.dataset.cat === active.cat.id));
+    });
+    elIdx.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { $('idxClose').focus(); }, 60);
+  }
+  function closeIdx(restore) {
+    elIdx.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (restore === false) return;
+    var back = lastFocus && lastFocus !== document.body && document.contains(lastFocus) && !elIdx.contains(lastFocus)
+      ? lastFocus : $('idxOpen');
+    back.focus({ preventScroll: true });
+  }
+  $('idxOpen').addEventListener('click', openIdx);
+  $('idxClose').addEventListener('click', function () { closeIdx(); });
+  elIdxList.addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-cat]');
+    if (!a) return;
+    e.preventDefault();
+    var target = $('c-' + a.dataset.cat);
+    closeIdx(false);
+    if (elQ.value) { elQ.value = ''; applySearch(); }
+    // jump once the scroll lock is released; the overlay's fade-out covers it
+    requestAnimationFrame(function () {
+      var y = target.getBoundingClientRect().top + window.scrollY - elBar.offsetHeight - 8;
+      window.scrollTo({ top: y, behavior: 'instant' });
+      $('idxOpen').focus({ preventScroll: true });
+      tick();
+    });
+  });
+  elIdx.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeIdx(); return; }
+    if (e.key !== 'Tab') return;
+    var f = [$('idxClose')].concat([].slice.call(elIdxList.querySelectorAll('a')));
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && elBar.classList.contains('is-searching')) {
+      elBar.classList.remove('is-searching'); $('searchOpen').focus();
+    }
+  });
+
+  /* ---------- per-frame work: reveal, spy, parallax, bar state ----------
+     Measured every frame we paint, so a fast flick can never leave a section
+     unrevealed or the label pointing at the wrong category.               */
+  var ticking = false;
+  function setNow(s) {
+    var label = s ? esc(s.cat.ar) + '<small>' + items(s.cat.items.length) + '</small>' : '';
+    var old = elNow.querySelector('span:not(.out)');
+    if (old) {
+      if (reduce) { old.remove(); }
+      else { old.classList.remove('in'); old.classList.add('out'); setTimeout(function () { old.remove(); }, 420); }
+    }
+    var span = document.createElement('span');
+    span.innerHTML = label;
+    if (!reduce) span.classList.add('in');
+    elNow.appendChild(span);
+  }
+  function tick() {
+    ticking = false;
+    var vh = window.innerHeight, line = vh * 0.9, spyLine = elBar.offsetHeight + 40;
+    var cur = null, shown = [];
+    for (var i = 0; i < sections.length; i++) {
+      var s = sections[i];
+      if (s.el.hidden) continue;
+      shown.push(s);
+      var r = s.el.getBoundingClientRect();
+      if (r.top < line && !s.el.classList.contains('is-in')) {
+        s.el.classList.add('is-in');
+        (function (el) { setTimeout(function () { el.classList.add('done'); }, 2400); })(s.el);
+      }
+      if (r.top <= spyLine) cur = s;
+      if (s.fig && !reduce && r.top < vh && r.bottom > 0) {
+        var p = (r.top + r.height / 2 - vh / 2) / vh;                  // -1..1 around centre
+        s.fig.style.setProperty('--py', Math.max(-1, Math.min(1, p)) * -28 + 'px');
+      }
+    }
+    if (!cur) cur = shown[0] || null;
+    if (shown.length && window.innerHeight + window.scrollY >= root.scrollHeight - 4) cur = shown[shown.length - 1];
+    if (cur !== active) { active = cur; setNow(cur); }
+
+    elBar.classList.toggle('is-stuck', elBar.getBoundingClientRect().top <= 0);
+    elToTop.classList.toggle('is-on', window.scrollY > vh * 1.4);
+    // ride above the footer instead of covering its booking button
+    var footTop = elFoot.getBoundingClientRect().top, base = Math.min(32, Math.max(16, window.innerWidth * 0.03));
+    elToTop.style.bottom = Math.max(base, vh - footTop + 16) + 'px';
+  }
+  var onTick = function () { if (!ticking) { ticking = true; requestAnimationFrame(tick); } };
+  window.addEventListener('scroll', onTick, { passive: true });
+  window.addEventListener('resize', function () { placeTabsBar(); onTick(); }, { passive: true });
+  elToTop.addEventListener('click', function () {
+    window.scrollTo({ top: elBar.getBoundingClientRect().top + window.scrollY, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  render(current);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeTabsBar);
+  // pages opened in a background tab can't start video until they're shown
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && !reduce && elVideo.getAttribute('src') && elVideo.paused) elVideo.play().catch(function () {});
+  });
+
+  /* deep link, e.g. menu.html#c-mashawi — jump instantly, then correct once
+     the display font has swapped in, unless the guest already scrolled.  */
+  if (hashId && $(hashId)) {
+    var target = $(hashId), landedAt = null;
+    var jump = function () {
+      var y = target.getBoundingClientRect().top + window.scrollY - elBar.offsetHeight - 8;
+      window.scrollTo({ top: y, behavior: 'instant' });
+      landedAt = window.scrollY; tick();
+    };
+    requestAnimationFrame(jump);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () {
+        requestAnimationFrame(function () { if (landedAt === null || Math.abs(window.scrollY - landedAt) < 2) jump(); });
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>

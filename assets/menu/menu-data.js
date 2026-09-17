@@ -107,7 +107,7 @@ window.QASIOUN_MENU = {
           ['شوربة خضار', 'Vegetable Soup', 1.75],
           ['شوربة فطر بالكريمة', 'Cream of Mushroom Soup', 2.50]
         ]},
-        { id: 'skillets', img: 'kibbeh', ar: 'قلايات وفخارات', en: 'Skillets & Clay Pots', items: [
+        { id: 'skillets', ar: 'قلايات وفخارات', en: 'Skillets & Clay Pots', items: [
           ['بيض مقلي', 'Egg Stew', 1.75],
           ['قلاية اومليت بالجبنة', 'Omelette Stew with Cheese', 3.00],
           ['قلاية اومليت بالخضار', 'Omelette Stew with Vegetables', 3.00],
@@ -509,7 +509,7 @@ window.QASIOUN_MENU = {
           ['شوربة خضار', '', 1.25],
           ['شوربة فطر بالكريمة', '', 2.00]
         ]},
-        { id: 't-skillets', img: 'kibbeh', ar: 'قلايات وفخارات', en: 'Skillets & Clay Pots', items: [
+        { id: 't-skillets', ar: 'قلايات وفخارات', en: 'Skillets & Clay Pots', items: [
           ['بيض مقلي', '', 1.75],
           ['قلاية اومليت بالجبنة', '', 2.50],
           ['قلاية اومليت بالخضار', '', 2.50],
